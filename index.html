@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dabas Városüzemeltetés</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <h1>Dabas Városüzemeltetés</h1>
+  <p>Fedezd fel a városüzemeltetési igazgatóságokat és telephelyeket.</p>
+
+  <h2>Központ</h2>
+  <div class="cards">
+    <div class="card" onclick="openModal('vezir')">
+      <h3>Vezérigazgatóság</h3>
+      <p>Stratégiai irányítás, operatív működés.</p>
+    </div>
+    <div class="card" onclick="openModal('gazdasagi')">
+      <h3>Gazdasági Igazgatóság</h3>
+      <p>Pénzügyek, beszámolók.</p>
+    </div>
+    <div class="card" onclick="openModal('varosgazd')">
+      <h3>Városüzemeltetési Igazgatóság</h3>
+      <p>Közterületek, közművek kezelése.</p>
+    </div>
+  </div>
+
+  <h2>Telephelyek</h2>
+  <div class="cards">
+    <div class="card" onclick="openModal('hoszolg')">
+      <h3>Hőszolgáltatási Igazgatóság</h3>
+      <p>Távfűtés és energiaellátás.</p>
+    </div>
+    <div class="card" onclick="openModal('piac')">
+      <h3>Piac</h3>
+      <p>Helyi termelők és vásárlók tere.</p>
+    </div>
+  </div>
+
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <div id="modal-text"></div>
+    </div>
+  </div>
+
+  <script>
+    function openModal(type) {
+      let content = '';
+
+      const mapURL = (query) =>
+        `<iframe src="https://www.google.com/maps?q=${encodeURIComponent(query)}&output=embed" width="100%" height="250" style="border:0; margin-top: 20px;" loading="lazy"></iframe>`;
+
+      switch(type) {
+        case 'vezir':
+        case 'gazdasagi':
+        case 'varosgazd':
+          content = `
+            <h2>Központi Igazgatóság</h2>
+            <p><strong>Cím:</strong> 2370 Dabas, Szent István tér 1/B.<br>
+            <strong>Email:</strong> kozig@dabas.hu<br>
+            <strong>Telefon:</strong> +36 29 456 233</p>
+            <h3>Feladatok:</h3>
+            <ul style="text-align: left; margin-top: 10px;">
+              <li>Stratégiai és operatív irányítás</li>
+              <li>Pénzügyi tervezés és beszámolók</li>
+              <li>Közterületek és közművek kezelése</li>
+              <li>Önkormányzati épületek karbantartása</li>
+              <li>Lakossági ügyek kezelése</li>
+            </ul>
+            ${mapURL('Dabas, Szent István tér 1/B')}
+          `;
+          break;
+
+        case 'hoszolg':
+          content = `
+            <h2>Hőszolgáltatási Igazgatóság</h2>
+            <p><strong>Cím:</strong> 2370 Dabas, Bartók Béla út 61.<br>
+            <strong>Email:</strong> hoszolg@dabas.hu<br>
+            <strong>Telefon:</strong> +36 29 231 445<br>
+            <strong>Üzemzavar elhárítás: 0-24h ZÖLDSZÁM: +36 80 444 588</p>
+            ${mapURL('Dabas, Bartók Béla út 61')}
+          `;
+          break;
+
+        case 'piac':
+          content = `
+            <h2>Dabasi Piac</h2>
+            <p><strong>Cím:</strong> Dabas, Iskola u. 1/a, 2370<br>
+            <strong>Email:</strong> piac@dabas.hu<br>
+            <strong>Telefon:</strong> +36 29 231 446<br>
+            </p>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2697.283925538978!2d19.319028776782343!3d47.185121871145705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4741be836fbcd409%3A0x97bb35e25554ff9f!2sDabasi%20Piac%2C%202370%20Dabas%2C%20Iskola%20u.%201%2Fa!5e0!3m2!1shu!2shu!4v1715352602296!5m2!1shu!2shu" 
+            width="100%" height="250" style="border:0; margin-top: 20px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          `;
+          break;
+
+      }
+
+      document.getElementById('modal-text').innerHTML = content;
+      document.getElementById('modal').style.display = 'flex';
+    }
+
+    function closeModal() {
+      document.getElementById('modal').style.display = 'none';
+    }
+  </script>
+
+</body>
+</html>
