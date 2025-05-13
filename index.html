@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="hu">
 <head>
   <meta charset="UTF-8" />
@@ -53,25 +53,50 @@
       const mapURL = (query) =>
         `<iframe src="https://www.google.com/maps?q=${encodeURIComponent(query)}&output=embed" width="100%" height="250" style="border:0; margin-top: 20px;" loading="lazy"></iframe>`;
 
-      switch(type) {
+      switch (type) {
         case 'vezir':
+          content = `
+            <h2>Vezérigazgató</h2>
+            <p><strong>Cím:</strong> 2370 Dabas, Szent István tér 1/B.<br>
+            <strong>Email:</strong> vezir@dabas.hu<br>
+            <strong>Telefon:</strong> +36 29 456 233</p>
+            <h3>Kapcsolatok:</h3>
+            <ul>
+              <li>Vezérigazgató</li>
+              <li>Titkárság</li>
+            </ul>
+            ${mapURL('Dabas, Szent István tér 1/B')}`;
+          break;
+
         case 'gazdasagi':
+          content = `
+            <h2>Gazdasági Igazgatóság</h2>
+            <p><strong>Cím:</strong> 2370 Dabas, Szent István tér 1/B.<br>
+            <strong>Email:</strong> gazdasag@dabas.hu<br>
+            <strong>Telefon:</strong> +36 29 456 234</p>
+            <h3>Kapcsolatok:</h3>
+            <ul>
+              <li>Gazdasági igazgató</li>
+              <li>Titkárság</li>
+              <li>Pénzügy</li>
+            </ul>
+            ${mapURL('Dabas, Szent István tér 1/B')}`;
+          break;
+
         case 'varosgazd':
           content = `
-            <h2>Igazgatóság</h2>
+            <h2>Városüzemeltetési Igazgatóság</h2>
             <p><strong>Cím:</strong> 2370 Dabas, Szent István tér 1/B.<br>
-            <strong>Email:</strong> kozig@dabas.hu<br>
-            <strong>Telefon:</strong> +36 29 456 233</p>
-            <h3>Feladatok:</h3>
-            <ul style="text-align: left; margin-top: 10px;">
-              <li>Stratégiai és operatív irányítás</li>
-              <li>Pénzügyi tervezés és beszámolók</li>
-              <li>Közterületek és közművek kezelése</li>
-              <li>Önkormányzati épületek karbantartása</li>
-              <li>Lakossági ügyek kezelése</li>
+            <strong>Email:</strong> uzemeltetes@dabas.hu<br>
+            <strong>Telefon:</strong> +36 29 456 235</p>
+            <h3>Kapcsolatok:</h3>
+            <ul>
+              <li>Városüzemeltetési igazgató</li>
+              <li>Karbantartás</li>
+              <li>Közterület-felügyelet</li>
+              <li>Ügyfélszolgálat</li>
             </ul>
-            ${mapURL('Dabas, Szent István tér 1/B')}
-          `;
+            ${mapURL('Dabas, Szent István tér 1/B')}`;
           break;
 
         case 'hoszolg':
@@ -80,9 +105,8 @@
             <p><strong>Cím:</strong> 2370 Dabas, Bartók Béla út 61.<br>
             <strong>Email:</strong> hoszolg@dabas.hu<br>
             <strong>Telefon:</strong> +36 29 231 445<br>
-            <strong>Üzemzavar elhárítás: 0-24h ZÖLDSZÁM: +36 80 444 588</p>
-            ${mapURL('Dabas, Bartók Béla út 61')}
-          `;
+            <strong>Zöldszám (0–24):</strong> +36 80 444 588</p>
+            ${mapURL('Dabas, Bartók Béla út 61')}`;
           break;
 
         case 'piac':
@@ -90,13 +114,10 @@
             <h2>Dabasi Piac</h2>
             <p><strong>Cím:</strong> Dabas, Iskola u. 1/a, 2370<br>
             <strong>Email:</strong> piac@dabas.hu<br>
-            <strong>Telefon:</strong> +36 29 231 446<br>
-            </p>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2697.283925538978!2d19.319028776782343!3d47.185121871145705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4741be836fbcd409%3A0x97bb35e25554ff9f!2sDabasi%20Piac%2C%202370%20Dabas%2C%20Iskola%20u.%201%2Fa!5e0!3m2!1shu!2shu!4v1715352602296!5m2!1shu!2shu" 
-            width="100%" height="250" style="border:0; margin-top: 20px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-          `;
+            <strong>Telefon:</strong> +36 29 231 446</p>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2697.283925538978!2d19.319028776782343!3d47.185121871145705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4741be836fbcd409%3A0x97bb35e25554ff9f!2sDabasi%20Piac%2C%202370%20Dabas%2C%20Iskola%20u.%201%2Fa!5e0!3m2!1shu!2shu!4v1715352602296!5m2!1shu!2shu"
+            width="100%" height="250" style="border:0; margin-top: 20px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`;
           break;
-
       }
 
       document.getElementById('modal-text').innerHTML = content;
