@@ -2,7 +2,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #FFA500; 
+  background-color: #FFA500;
   background-image: url('Dabas_cimer.jpg');
   background-size: contain;
   background-position: center;
@@ -49,10 +49,11 @@ h1, h2, p {
 }
 
 .card:hover {
-  transform: scale(1.5);
+  transform: scale(1.1);
   background: linear-gradient(135deg, #ffffff, #e0e0ff);
   box-shadow: 0 12px 24px rgba(0, 0, 255, 0.4);
   border: 2px solid rgba(0, 0, 255, 0.3);
+}
 
 .modal {
   display: none;
@@ -74,6 +75,8 @@ h1, h2, p {
   max-width: 600px;
   width: 90%;
   position: relative;
+  max-height: 90vh;
+  overflow-y: auto;
 }
 
 .close {
@@ -84,4 +87,19 @@ h1, h2, p {
   font-weight: bold;
   color: #333;
   cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+  }
+
+  .modal-content {
+    padding: 20px;
+  }
 }
