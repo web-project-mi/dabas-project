@@ -103,3 +103,12 @@ h1, h2, p {
     padding: 20px;
   }
 }
+.piac-card {
+  width: 320px;
+}
+
+@media (max-width: 600px) {
+  .piac-card {
+    width: 90%;
+  }
+}
