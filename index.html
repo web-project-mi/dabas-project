@@ -1,4 +1,4 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="hu">
 <head>
   <meta charset="UTF-8" />
@@ -9,7 +9,8 @@
 <body>
 
   <h1>Dabas Városüzemeltetés</h1>
-  
+  <p>Fedezd fel a városüzemeltetési igazgatóságokat és telephelyeket.</p>
+
   <h2>Központ</h2>
   <div class="cards">
     <div class="card" onclick="openModal('vezir')">
@@ -32,7 +33,8 @@
       <h3>Hőszolgáltatási Igazgatóság</h3>
       <p>Távfűtés és energiaellátás.</p>
     </div>
-    <div class="card" onclick="openModal('piac')">
+    <div class="card piac-card" onclick="openModal('piac')">
+
       <h3>Piac</h3>
       <p>Helyi termelők és vásárlók tere.</p>
     </div>
@@ -56,7 +58,7 @@
         case 'vezir':
           content = `
             <h2>Vezérigazgató</h2>
-            <p><strong>Cím:</strong> 2370 Dabas, Kölcsey Ferenc utca 7.<br>
+            <p><strong>Cím:</strong> 2370 Dabas, Szent István tér 1/B.<br>
             <strong>Email:</strong> vezir@dabas.hu<br>
             <strong>Telefon:</strong> +36 29 456 233</p>
             <h3>Kapcsolatok:</h3>
@@ -64,13 +66,13 @@
               <li>Vezérigazgató</li>
               <li>Titkárság</li>
             </ul>
-            ${mapURL('Dabas, Kölcsey utca 7.')}`;
+            ${mapURL('Dabas, Szent István tér 1/B')}`;
           break;
 
         case 'gazdasagi':
           content = `
             <h2>Gazdasági Igazgatóság</h2>
-            <p><strong>Cím:</strong> 2370 Dabas, Kölcsey Ferenc utca 7.<br>
+            <p><strong>Cím:</strong> 2370 Dabas, Szent István tér 1/B.<br>
             <strong>Email:</strong> gazdasag@dabas.hu<br>
             <strong>Telefon:</strong> +36 29 456 234</p>
             <h3>Kapcsolatok:</h3>
@@ -79,13 +81,13 @@
               <li>Titkárság</li>
               <li>Pénzügy</li>
             </ul>
-            ${mapURL('Dabas, Kölcsey utca 7.')}`;
+            ${mapURL('Dabas, Szent István tér 1/B')}`;
           break;
 
         case 'varosgazd':
           content = `
             <h2>Városüzemeltetési Igazgatóság</h2>
-            <p><strong>Cím:</strong> 2370 Dabas, Kölcsey Ferenc utca 7.<br>
+            <p><strong>Cím:</strong> 2370 Dabas, Szent István tér 1/B.<br>
             <strong>Email:</strong> uzemeltetes@dabas.hu<br>
             <strong>Telefon:</strong> +36 29 456 235</p>
             <h3>Kapcsolatok:</h3>
@@ -95,26 +97,32 @@
               <li>Közterület-felügyelet</li>
               <li>Ügyfélszolgálat</li>
             </ul>
-            ${mapURL('Dabas, Kölcsey utca 7.')}`;
+            ${mapURL('Dabas, Szent István tér 1/B')}`;
           break;
 
         case 'hoszolg':
           content = `
             <h2>Hőszolgáltatási Igazgatóság</h2>
-            <p><strong>Cím:</strong> 2370 Dabas, Kossuth Lajos utca 10.<br>
+            <p><strong>Cím:</strong> 2370 Dabas, Bartók Béla út 61.<br>
             <strong>Email:</strong> hoszolg@dabas.hu<br>
             <strong>Telefon:</strong> +36 29 231 445<br>
             <strong>Zöldszám (0–24):</strong> +36 80 444 588</p>
-            ${mapURL('Dabas, Kossuth Lajos utca 10.')}`;
+            ${mapURL('Dabas, Bartók Béla út 61')}`;
           break;
 
         case 'piac':
           content = `
             <h2>Dabasi Piac</h2>
-            <p><strong>Cím:</strong> Dabas, Kossuth Lajos utca 13.<br>
+            <p><strong>Cím:</strong> Dabas, Iskola u. 1/a, 2370<br>
             <strong>Email:</strong> piac@dabas.hu<br>
             <strong>Telefon:</strong> +36 29 231 446</p>
-            ${mapURL('Dabas, Kossuth Lajos utca 13.')}`;
+
+            <iframe src="proba_vizsga_3_megoldas.pdf"
+            width="120%" height="900px"
+            style="border: none; margin: 10px 0;">
+            </iframe>
+
+            ${mapURL('Dabas, Iskola u. 1/a, 2370')}`;
           break;
       }
 
